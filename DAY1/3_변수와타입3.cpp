@@ -23,4 +23,13 @@ int main()
 	// auto     : 우변 표현식으로 타입결정
 	// decltype : () 안의 표현식으로 타입 결정
 	decltype(n) d1; // int d1
+
+	// auto : 우변의 const, volatile, register, reference(?) 를 
+	//			  모두 제거하고 타입결정
+	// decltype() : 제거하지 않고 타입 결정
+
+	const volatile int cv = 10;
+	auto aa = cv;    // int aa = cv;
+	decltype(cv) dd; // const volatile int dd; 인데.. 
+					 // const 변수 초기화 안했으므로 error
 }

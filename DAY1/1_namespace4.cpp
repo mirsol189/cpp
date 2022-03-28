@@ -8,8 +8,8 @@
 //	C 헤더			C++ 헤더
 // <xxx.h>		=>  <cxxx>
 // <stdio.h>	=>  <cstdio>
-// <string.h>	=>  <?>
-// <stdlib.h>	=>  <?>
+// <string.h>	=>  <cstring>
+// <stdlib.h>	=>  <cstdlib>
 
 int main()
 {

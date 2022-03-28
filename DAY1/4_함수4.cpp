@@ -33,4 +33,7 @@ int main()
 	// 컴파일러가 "함수 인자"를 보고 추론합니다.
 	square(3);  // == square<int>(3) 과 동일
 	square(3.4);
+
+	square<int>(3.4); // 1. int square(int) 함수가 생성됩니다.
+					  // 2. call square<int>(3.4)
 }

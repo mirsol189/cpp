@@ -17,6 +17,8 @@ int main()
 	std::nullptr_t a = nullptr; // nullptr_t 타입입니다.
 
 	// 이제 a는 nullptr 처럼 사용가능 합니다.
-	int* p2 = a; // ok!
-		
+	int* p2 = a; // ok!		
 }
+
+// literal : 프로그램에서 사용하는 이름 없는 "값"
+//			10, 3.4, "hello", true, nullptr

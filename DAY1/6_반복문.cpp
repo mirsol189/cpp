@@ -14,7 +14,7 @@ int main()
 	// python   : for in   
 	for (auto e : x) // 배열뿐아니라 C++ 표준 list, vector등도 가능. 
 	{
-		std::cout << e << std::end; 
+		std::cout << e << std::endl; 
 	}
 
 	// 1. 5개만 꺼낼수 없나요 ? 2칸씩 건너뛸수 없나요 ?

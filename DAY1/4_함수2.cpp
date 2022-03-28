@@ -28,6 +28,7 @@ void f1(int) {}
 void f1(int, int b = 10) {}
 f1(20); // error
 
+
 void f2(int) {}
 char f2(int) { return 0; }
 

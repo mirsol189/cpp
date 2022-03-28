@@ -17,3 +17,5 @@ int main()
 	std::cout << std::setw(10) << n << std::endl;
 	std::cout << std::setw(10) << std::setfill('#') << n << std::endl;
 }
+
+// cppreference.com 에서 우측 상단에서 std::setw  검색해 보세요.

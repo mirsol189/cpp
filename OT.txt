@@ -1,0 +1,20 @@
+C++ OOP 프로그래밍 과정입니다.
+
+강석민 강사 ( smkang @ codenuri.co.kr )
+github.com/codenuri/cpp  에 수업에서 사용한 소스 올려놓겠습니다.
+
+실습 도구 : Visual Studio 2017 이후(express이상) 버전 (2019, 2022)
+	      => "설치시 데스크톱 개발을 위한 C++" 을 체크 하셔야 합니다.
+          express   : free.  2017 까지
+		  community : 개인 설치시만 무료. 2022 
+		  또는 g++, clang++, xcode 사용하셔도 됩니다.
+
+출석 : codexpert.org 에서 "손들기" 진행 - 1교시, 8교시.
+      ID 는 조금 있다가 게시 하겠습니다.
+-----------------------------------------------------
+참고 사이트 
+1. www.isocpp.org
+2. www.cppreference.com
+3. 유튜브에서 "cppcon" 검색해 보세요
+4. godbolt.org => C/C++ 및 수십가지 언어의 "어셈블리코드" 확인가능
+

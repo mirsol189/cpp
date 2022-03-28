@@ -26,7 +26,7 @@ int main()
 
 	auto[b1, b2, b3] = arr; // 역시 auto로 하고, 갯수가 동일해야 합니다.
 
-
+	// "structured binding"
 }
 
 

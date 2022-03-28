@@ -18,6 +18,8 @@ auto Add(T1 a, T2 b)  // C++14 부터는 후위 반환 타입 생략가능합니
 
 int main()
 {
+	auto ret = Add(1, 3.4); // ok.. 
+
 	std::cout << Add<int, double>(1, 2.2) << std::endl; // 타입을 전달하는 경우
 	
 	std::cout << Add(1, 2.2) << std::endl; // 타입인자를 생략하는 경우

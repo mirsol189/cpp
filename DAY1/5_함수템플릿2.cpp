@@ -1,7 +1,10 @@
 ﻿#include <iostream>
 
 template<typename T1, typename T2>
-? Add(T1 a, T2 b)
+//? Add(T1 a, T2 b)  // C++ 초창기에 ? 를 표기하는게 어려웠습니다.
+
+decltype(a + b) Add(T1 a, T2 b)  // 그래서, C++11에서 decltype()을 만들었습니다.
+								 // 그런데 왜 이코드가 에러일까요 ?
 {
 	return a + b;
 }

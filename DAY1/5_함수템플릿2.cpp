@@ -7,8 +7,12 @@ template<typename T1, typename T2>
 								 // 그런데 왜 이코드가 에러일까요 ?
 								 // a, b 를 선언전에 사용하는 코드입니다.
 
-auto Add(T1 a, T2 b) -> decltype(a + b)
-{
+//auto Add(T1 a, T2 b) -> decltype(a + b) // C++11의 후위 반환 표기법 사용하면 ok.
+
+auto Add(T1 a, T2 b)  // C++14 부터는 후위 반환 타입 생략가능합니다.
+{					  // 생략시 return 문장을 보고 추론합니다.
+					  // 서로 다른 타입으로 계산되는 return 문장이 여러개 라면
+					  // 위처럼 후위 반환 타입으로 표기해 주어야 합니다.
 	return a + b;
 }
 

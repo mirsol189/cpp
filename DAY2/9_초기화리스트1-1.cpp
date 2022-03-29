@@ -21,6 +21,8 @@ class Person2
 public:
 	Person2(const std::string& s, int a) : name(s), age(a)
 	{
+		// 제어문등이 필요한 경우만 여기서 코드를 작성하세요.
+		// 단순한 멤버 초기화는 위처럼 초기화 리스트 사용하세요.
 	}
 };
 int main()

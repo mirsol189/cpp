@@ -5,15 +5,22 @@ int g = 10;
 
 class Test
 {
-	int v1 = 0;
-	int v2 = ++g;
+	// C++11의 field 초기화 사용할때
+	int v1 = 0;		// 이렇게 리터럴 초기화는 좋습니다. 많이 사용하세요
+	int v2 = ++g;	// 절대 이런 코드는 사용하지 마세요. 혼란스럽습니다.
+
+	// 채팅창 질문 :멤버가 배열일때 좋은 방법 있나요 ?
+	// C++11이후면 바로 초기화 됩니다.
+	int arr[5] = { 1,2,3,4,5 };
+
 public:
-	Test() {}
-	Test(int n) :v2(n) {}
+	//	
+	Test() {}				// Test() : v1(0), v2(++g){}
+	Test(int n) :v2(n) {}   // Test(int n) : v1(0), v2(n) {}
 };
 int main()
 {
 	Test t1;
 	Test t2(5);
-	std::cout << g << std::endl; // ?? 
+	std::cout << g << std::endl; // 11
 }

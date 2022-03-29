@@ -3,7 +3,8 @@ class Bike
 	int gear;
 public:
 	// explicit 생성자 : 직접 초기화 만 가능하고
-	//					복사 호기화 는 사용할수 없다.
+	//					복사 초기화 는 사용할수 없다.
+	//					+ 생성자에 의한 암시적 변환도 막을수 있습니다.
 	explicit Bike(int n) : gear(n) {}
 };
 

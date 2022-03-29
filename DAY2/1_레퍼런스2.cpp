@@ -39,8 +39,14 @@ void f1(int* p)
 		*p = 10;
 	}
 }
+
 void f2(int& r)
 {
 	// 위 포인터 처럼 null pointer 조사할 필요 없다.
 	r = 10; 
 }
+
+// call by reference 용어
+// C언어   : 포인터를 전달하는 것을 의미
+// C++언어 : reference 문법이 따로 존재 하므로
+//			call by pointer 와 call by reference 로 구별해서 사용하세요

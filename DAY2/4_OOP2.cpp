@@ -13,6 +13,7 @@ int getRectArea( const Rect& rc)
 {
 	return (rc.right - rc.left) * ( rc.bottom - rc.top);
 }
+
 int main()
 {
 	Rect rc = { 0, 0, 10, 10 };

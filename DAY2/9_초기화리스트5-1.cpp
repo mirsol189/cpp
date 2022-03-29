@@ -15,7 +15,7 @@ class Test
 
 public:
 	//	
-	Test() {}				// Test() : v1(0), v2(++g){}
+	Test() : arr{ 1,2,3 }  {}				// Test() : v1(0), v2(++g){}
 	Test(int n) :v2(n) {}   // Test(int n) : v1(0), v2(n) {}
 };
 int main()

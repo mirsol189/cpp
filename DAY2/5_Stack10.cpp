@@ -3,6 +3,9 @@
 // 이미 C++ 표준에 템플릿 기반으로 만들어지 stack 이 있습니다.
 #include <stack>
 
+// STL ( Standard Template Library )
+// C++ 표준이 제공하는 "템플릿 기반의 라이브러리"
+
 int main()
 {
 	std::stack<int> s; 

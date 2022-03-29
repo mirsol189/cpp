@@ -12,6 +12,11 @@ public:
 	{
 		if ( value > 0 && value < 21 )
 			gear = value;
+		else
+		{
+			// 잘못된 값이 왔다고 호출자에게 알려준다.
+			// 예외 등의 문법 사용..
+		}
 	}
 };
 

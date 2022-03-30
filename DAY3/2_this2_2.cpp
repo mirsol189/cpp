@@ -1,3 +1,5 @@
+#include <iostream>
+
 struct Point  
 {
 	int x;
@@ -14,6 +16,9 @@ Point f3()
 
 int main()
 {
-	f3().x = 10;
+//	f3().x = 10;
+
+	f3();
+
 	std::cout << "-----" << std::endl;
 }

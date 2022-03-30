@@ -29,13 +29,25 @@ public:
 
 	// 가상함수 재정의시 반환 타입을 변경할수 있나요 ? 
 	// => 됩니다.단, 상속관계의 타입으로만 
-	virtual Rect* Clone() override
+//	virtual Shape* Clone() override // A 
+	virtual Rect* Clone() override  // B
 	{
 		Rect* p = new Rect;
 		p->setColor(getColor());
 		return p;
 	}
 };
+// 위 Clone() 이 Shape* 를 반환했다면 
+// Rect* p1 = new Rect()    // Shape* 반환시      Rect* 반환시
+// Shape* p2 = p1->Clone(); // ok				 ok
+// Rect*  p3 = p1->Clone(); // error		     ok
+//		static_cast<Rect*>(p1->Clone())로 가능	
+
+// vector<Shape*> 이므로 &rect, &circle 은 자동으로!
+
+// Shape* p1 = &rect;   // ok
+// Shape* p2 = &circle; // ok
+
 
 class Circle : public Shape
 {
@@ -52,6 +64,8 @@ public:
 		return p;
 	}
 };
+
+
 
 int main()
 {

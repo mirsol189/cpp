@@ -26,4 +26,6 @@ int Car::cnt;
 int main()
 {
 	Car::goo();
+//	Car c;
+//	c.goo();
 }

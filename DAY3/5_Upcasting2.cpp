@@ -23,10 +23,18 @@ int main()
 				// 동종(동일 기반 클래스 로 부터 파생된 타입)을 보관하는 컨테이너.
 
 	// 아래 2개의 차이점을 많이 어려워 합니다.
-	std::vector<Animal>  v4;
-	std::vector<Animal*> v5;
 
 	Dog dog;
 	Animal* p = &dog; // 기존에 생성된 dog 를 가리키겠다는것
 	Animal  a = dog;  // 에러는 아닌데...
+					// 새로운 Animal 객체 생성
+
+	// 그래서 아래 2줄의 차이점은 ?? 꼭 그림으로 기억해 두세요..
+	std::vector<Animal>  v4;
+
+	v4.push_back(dog); // dog 를 복사해서 새로 만든 Animal 보관
+
+	std::vector<Animal*> v5;
+	v5.push_back(&dog); // dog의 주소 보관
+
 }

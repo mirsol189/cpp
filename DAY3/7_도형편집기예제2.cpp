@@ -46,12 +46,16 @@ int main()
 		else if (cmd == 9)
 		{
 			// 지금까지 만든 모든 도형을 그려 줍니다.
-			for (auto p : v)
-				p->draw();
+			for (auto p : v) // Shape* p 인데
+				p->draw();	 // Shape 안에는 draw 가 없기 때문에 에러
 		}
 	}
 }
 // 왜 이코드가 에러일까요 ?
 // 해결책은 뭘까요 ??
+// 1. Shape 안에 draw 를 만들자
+// 2. Shape* 타입인 p 를 Rect* 또는 Circle* 캐스팅 후 사용
+//    => 그런데, 어떤 도형인지 알수없다.
+//    => 물론, 조사 가능하지만 조사하는 코드를 만드는 것은 좋지 않다.
 
 

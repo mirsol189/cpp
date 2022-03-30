@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 
+// Person  : Base Class(기반클래스),  Super Class, Parent Class
+// Student : Derived Class(파생클래스), Sub Class, Child Class
+
 // 1. 모든 사람이 가져야하는 특징으로 "Person" 타입 설계
 
 class Person

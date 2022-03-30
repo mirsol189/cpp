@@ -15,24 +15,24 @@ class Derived : public Base
 	int y;
 public:
 	// 사용자가 만든코드		// 컴파일러가 변경한 코드
-	Derived()				// 
+	Derived()				// Derived() : Base()	
 	{ 
 		std::cout << "Derived()" << std::endl; 
 	}
-	Derived(int a) 
+	Derived(int a)			// Derived(int a) : Base()
 	{ 
 		std::cout << "Derived(int)" << std::endl; 
 	}
 	~Derived() 
 	{ 
 		std::cout << "~Derived()" << std::endl; 
+		// ~Base()  //컴파일러가 추가
 	}
 };
-
 int main()
 {
-	//	Derived d;	
-	Derived d(5);
+	//	Derived d;	// call Derived::Derived()
+	Derived d(5);   // call Derived::Derived(int)
 }
 
 

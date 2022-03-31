@@ -17,6 +17,7 @@ public:
 		return temp;
 	}
 */
+	friend Point operator+(const Point& p1, const Point& p2);
 };
 // 멤버가 아닌 operator+ 함수
 Point operator+(const Point& p1, const Point& p2)
@@ -26,8 +27,6 @@ Point operator+(const Point& p1, const Point& p2)
 	Point temp(p1.x + p2.x, p1.y + p2.y);
 	return temp;
 }
-
-
 
 int main()
 {

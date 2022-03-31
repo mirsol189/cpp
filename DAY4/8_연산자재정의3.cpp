@@ -9,14 +9,13 @@ public:
 
 	void print() const { std::cout << x << ", " << y << std::endl; }
 
-/*
 	Point operator+(const Point& pt)
 	{
 		std::cout << "멤버로 만든 operator+" << std::endl;
 		Point temp(x + pt.x, y + pt.y);
 		return temp;
 	}
-*/
+
 	friend Point operator+(const Point& p1, const Point& p2);
 };
 // 멤버가 아닌 operator+ 함수

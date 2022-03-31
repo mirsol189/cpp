@@ -13,7 +13,7 @@ class B   // 주의 상속관계 아닙니다.
 {
 	int b;
 public:
-	void goo() { std::cout << "goo" << std::endl; }  // 2
+	virtual void goo() { std::cout << "goo" << std::endl; }  // 2
 };
 int main()
 {
@@ -21,7 +21,13 @@ int main()
 //	B* p = &aaa; // error. static_cast 도 안됩니다.
 	B* p = reinterpret_cast<B*>(&aaa); // ok..
 
-	p->goo();  // foo ? goo ? 
+	p->goo();	// 컴파일러가 하는일
+				// 1. goo가 가상인지 아닌지 조사
+				// 2. 가상이 아니면 : static binding, 포인터 타입으로 호출
+				//    가상이면  : dynamic binding. 가상함수 테이블 참조해서 호출
+				//				p->vtable[1]()   라는 기계어 코드 생성
 			
 }
-
+// foo 비가상, goo 비가상 : goo 호출
+// foo  가상,  goo  가상 : foo 호출
+// foo  가상,  goo 비가상 : goo 호출

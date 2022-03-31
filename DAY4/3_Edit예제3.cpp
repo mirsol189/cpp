@@ -14,22 +14,20 @@
 struct IValidator
 {
 	virtual bool validate(const std::string& s, char c) = 0;
-
 	virtual bool iscomplete(const std::string& s) { return true; }
-
 	virtual ~IValidator() {}
 };
-
-// 주민 등록  번호 : 801   1		확인
-
-
-
-
+// 주민 등록 번호 : 801   1		확인
 
 class Edit
 {
 	std::string data;
+	//--------------------------------
+	IValidator* pval = nullptr;
 public:
+	void setValidator(IValidator* p) { pval = p; }
+	//--------------------------------
+
 	std::string getData()
 	{
 		data.clear();
@@ -38,10 +36,10 @@ public:
 		{
 			char c = _getch(); 
 
-			if (c == 13)      
+			if (c == 13 && (pval == nullptr || pval->iscomplete(data))  )
 				break;
 
-			if (isdigit(c))
+			if ( pval == nullptr || pval->validate(data, c) ) // 유효성 여부를 외부에 위임한다.
 			{
 				std::cout << c;    
 				data.push_back(c); 

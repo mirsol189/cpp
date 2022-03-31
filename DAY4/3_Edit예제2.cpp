@@ -2,27 +2,30 @@
 #include <string>
 #include <conio.h>
 
-// 입력도구에는 Validation(입력값의 유효성) 기능을 넣는것이 좋다.
+// Validation 정책은 교체 가능해야 한다.
+
+// 방법 1. 
 
 class Edit
 {
 	std::string data;
 public:
+
 	std::string getData()
 	{
 		data.clear();
 
 		while (1)
 		{
-			char c = _getch(); //한 문자 입력
+			char c = _getch(); 
 
-			if (c == 13)      // enter 키
+			if (c == 13)      
 				break;
 
 			if (isdigit(c))
 			{
-				std::cout << c;    // 화면 출력후
-				data.push_back(c); // 문자열에 추가
+				std::cout << c;    
+				data.push_back(c); 
 			}
 		}
 		std::cout << std::endl;
@@ -30,6 +33,7 @@ public:
 		return data;
 	}
 };
+
 
 
 

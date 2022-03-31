@@ -34,11 +34,24 @@ public:
 	// 팝업메뉴를 선택했을때 해야하는 동작
 	void command()
 	{
+		// 하위 메뉴를 보여 주고
+		int sz = v.size();
 
+		for (int i = 0; i < sz; i++)
+		{
+			std::cout << i + 1 << ". " << v[i]->get_title() << std::endl;
+		}
+		std::cout << sz + 1 << ". 종료" << std::endl;
+		
+		// 메뉴를 선택 받고
+		std::cout << "메뉴를 선택하세요 >> ";
+		int cmd;
+		std::cin >> cmd;
+
+		// 선택된 메뉴를 실행(command() 호출)
+		v[cmd - 1]->command();
 	}
 };
-
-
 
 
 
@@ -46,5 +59,11 @@ int main()
 {
 	MenuItem m1("김밥", 11);
 	MenuItem m2("라면", 12);
-	m1.command(); // 김밥 선택.
+
+	PopupMenu pm("오늘의 메뉴");
+	pm.add_menu(&m1);
+	pm.add_menu(&m2);
+	
+	pm.command(); // 팝업메뉴 선택..
+				  // 해야할 일을 잘생각해 보세요.
 }

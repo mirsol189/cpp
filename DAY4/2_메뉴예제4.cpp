@@ -12,7 +12,14 @@ public:
 	BaseMenu(const std::string& s) : title(s) {}
 	virtual ~BaseMenu() {}
 	std::string get_title() const { return title; }
+
+	// 모든 파생 클래스의 공통의 특징은 반드시 기반 클래스에 있어야한다.
+	// 모든 메뉴는 선택될수 있다.
+	virtual void command() = 0;
 };
+
+
+
 
 class MenuItem : public BaseMenu
 {
@@ -34,8 +41,6 @@ public:
 	PopupMenu(const std::string& s) : BaseMenu(s) {}
 
 	void add_menu(BaseMenu* m) { v.push_back(m); }
-
-
 
 	void command()
 	{

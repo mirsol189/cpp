@@ -1,5 +1,5 @@
 #include <cstdio>
-
+/*
 namespace std
 {
 	class ostream
@@ -23,6 +23,8 @@ namespace std
 		return os;
 	}
 }
+*/
+#include <iostream>
 
 std::ostream& tab(std::ostream& os)
 {
@@ -48,6 +50,9 @@ int main()
 	std::cout << "A" << tab << "B" << std::endl;
 
 	std::cout << menu;
+
+	printf("%p\n", &(std::cout << 11) );
+	printf("%p\n", &std::cout);
 
 }
 

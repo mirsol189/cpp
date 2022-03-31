@@ -78,7 +78,6 @@ int main()
 	kpm.add_menu(&k1);
 	kpm.add_menu(&k2);
 
-
 	MenuItem m2("라면", 12);
 	MenuItem m3("국수", 13);
 

@@ -27,8 +27,11 @@ int main()
 					// 멤버로 안되면 일반함수로 가능
 					// operator<<(ostream, Point) 
 					
+	std::ostream&       os1 = cout;       // os는 cout별명입니다.
+	const std::ostream& os2 = cout;
 					
-					
+	os1 << "A"; // ok    os1.operator<<("A")
+	os2 << "A"; // error os1.operator<<("A") <== 상수 멤버 함수 아님.
 }
 
 

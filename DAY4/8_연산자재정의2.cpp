@@ -27,6 +27,9 @@ int main()
 	Point p3 = p1 + p2; // 1) p1.operator+(p2) 가 가능하면 사용
 						// 2) operator+(p1, p2) 가 가능하면 사용
 						// 1, 2 가 모두 실패하면 컴파일 에러.
+	Point p4 = p2 + p1; // p2.operator+(p1) ok..
+
+	p3.print();
 
 }
 

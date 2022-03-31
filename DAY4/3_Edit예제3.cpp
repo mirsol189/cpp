@@ -63,8 +63,20 @@ public:
 	{
 		if (s.size() < value && isdigit(c))
 			return true;
+
+		return false;
+	}
+	bool iscomplete(const std::string& s) override
+	{
+		return s.size() == value;
 	}
 };
+// 이제 "LimitDigitValidator" 와 같이 "다양한 Validation 정책을 담은 클래스를 
+// 제공하면 됩니다.
+// ex) 이메일 규칙확인, 주민번호 확인, 나이제한, 전화번호 형식등..
+
+
+
 int main()
 {
 	Edit e;

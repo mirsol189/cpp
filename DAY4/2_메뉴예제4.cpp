@@ -4,14 +4,21 @@
 #include <conio.h>
 
 
-class MenuItem
+// 모든 메뉴의 기반 클래스
+class BaseMenu
 {
 	std::string title;
+public:
+	BaseMenu(const std::string& s) : title(s) {}
+	virtual ~BaseMenu() {}
+	std::string get_title() const { return title; }
+};
+
+class MenuItem : public BaseMenu
+{
 	int id;
 public:
-	MenuItem(const std::string& s, int n) : title(s), id(n) {}
-
-	std::string get_title() const { return title; }
+	MenuItem(const std::string& s, int n) : BaseMenu(s), id(n) {}
 
 	void command()
 	{
@@ -19,16 +26,16 @@ public:
 		_getch();
 	}
 };
-
-class PopupMenu
+class PopupMenu : public BaseMenu
 {
 	std::string title;
-	std::vector<MenuItem*> v;
-
+	std::vector<BaseMenu*> v;
 public:
-	PopupMenu(const std::string& s) : title(s) {}
+	PopupMenu(const std::string& s) : BaseMenu(s) {}
 
-	void add_menu(MenuItem* m) { v.push_back(m); }
+	void add_menu(BaseMenu* m) { v.push_back(m); }
+
+
 
 	void command()
 	{

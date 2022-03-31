@@ -37,11 +37,11 @@ interface ICamera
 {
 	virtual void take() = 0;
 
-	virtual ~ICamera() {}  // 인터페이스(추상클래스)도 결국 기반 클래스이므로
+	virtual ~ICamera() = {}  // 인터페이스(추상클래스)도 결국 기반 클래스이므로
 						// 반드시 소멸자를 가상으로 만드세요.
 };
-
-
+// ICamera* p = new Camera;
+// delete p; // 
 
 
 class People

@@ -21,8 +21,8 @@ int main()
 	Animal a;
 	Dog    d;
 
-	std::cout << sizeof(a) << std::end;;
-	std::cout << sizeof(d) << std::end;;
+	std::cout << sizeof(a) << std::endl;
+	std::cout << sizeof(d) << std::endl;
 
 	Animal* p = &d;
 

@@ -27,7 +27,6 @@ class Edit
 public:
 	void setValidator(IValidator* p) { pval = p; }
 	//--------------------------------
-
 	std::string getData()
 	{
 		data.clear();
@@ -50,13 +49,27 @@ public:
 		return data;
 	}
 };
+// 1. Edit 는 기본적으로 모든 입력을 허용합니다.
+// 2. 입력값의 Validatioin 정책을 변경하려면 
+//    Validation 정책을 담은 다양한 클래스를 설계하면 됩니다.
 
+class LimitDigitValidator : public IValidator
+{
+	int value;
+public:
+	LimitDigitValidator(int n) : value(n) {}
 
-
-
+	bool validate(const std::string& s, char c) override
+	{
+		if (s.size() < value && isdigit(c))
+			return true;
+	}
+};
 int main()
 {
 	Edit e;
+	LimitDigitValidator v(5);
+	e.setValidator(&v);
 	while (1)
 	{
 		std::cout << e.getData() << std::endl;

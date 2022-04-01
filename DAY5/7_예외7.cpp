@@ -1,6 +1,10 @@
 #include <iostream>
 
-void foo()
+// 함수 제작시, 예외 가능성이 없으면
+// "noexcept" 를 붙이는 것이 좋습니다.
+
+//void foo()
+void foo() noexcept  // 예외 없다는 것을 컴파일러에게 알려주는것
 {
 }
 

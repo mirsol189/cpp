@@ -25,6 +25,25 @@ int main()
 	std::shared_ptr<Car> sp2 = sp1; // ok. 복사 생성자, 참조 계수 증가
 
 	// 핵심 1. 스마트포인터의 크기
+	std::cout << sizeof(Car*) << std::endl;
 	std::cout << sizeof(sp1) << std::endl;
 
+	// 핵심 2. 스마트 포인터는 포인터 역할도 하지만 정체는 "객체"입니다.
+	// -> 뿐 아니라 . 도 가능합니다
+
+	// -> : 대상체(Car)의 멤버 함수 접근
+	sp1->Go(); // sp1.operator->()
+
+
+	// . : 자신(shared_ptr)의 멤버 접근
+	int n = sp1.use_count();
+	std::cout << n << std::endl;
+
 }
+// 파이썬 의 모든 변수는 결국 "스마트포인터처럼 동작합니다."
+//n1 = 10  
+//n2 = n1  
+
+// Swift 는 모든 객체 관리를 "ARC" 라는 개념으로 관리합니다.
+// Automatic Reference Counting
+// => 결국 스마트포인터 개념 일뿐입니다.

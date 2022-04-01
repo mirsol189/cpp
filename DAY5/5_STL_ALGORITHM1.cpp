@@ -1,7 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include <algorithm>
+
+// 알고리즘
+// 일반적인 용어 : 문제를 해결하는 방법
+// STL         : find 같은 일반함수 템플릿
+
+#include <algorithm> // find 같은 알고리즘.. 
+
 
 int main()
 {

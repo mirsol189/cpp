@@ -29,6 +29,20 @@ int main()
 		std::cout << *p2 << std::endl;
 		++p2;
 	}
+
+	// 3. 멤버 begin vs non member begin
+//	std::list<int>   c = { 1,2,3 };
+//	std::vector<int> c = { 1,2,3 };
+	int c[5] = { 1,2,3,4,5 };
+
+//	auto p5 = c.begin();    // error. raw array 는 begin 없음
+	auto p5 = std::begin(c);// ok. c가 STL 컨테이너라도 되고
+							//     raw array 라도 ok
+
+	// QA : ++ 연산자
+	++p; // p.operator++() 호출
+	p++; // p.operator++(int) 호출. 전위형과 구별하기위해
+		//						사용되지는 않지만int 가 있어야 한다.
 }
 
 
